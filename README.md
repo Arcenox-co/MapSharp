@@ -126,6 +126,7 @@ public class MappingProfile : Profile
 ```
 Generated Extension Method:
 ```csharp
+
 public static class User_To_UserDto_MappingExtension
 {
     public static UserDto ToUserDto(this User source)
@@ -236,6 +237,71 @@ public static class Group_To_GroupDto_MappingExtension
     }
 }
 ```
+
+### Asynchronous Property Mappings
+Scenario: You need to perform asynchronous operations during mapping.
+Defining Models and DTOs:
+```csharp
+public class Order
+{
+    public string OrderId { get; set; }
+    public decimal Amount { get; set; }
+    public string CustomerId { get; set; }
+}
+
+public class OrderDto
+{
+    public string OrderId { get; set; }
+    public decimal Amount { get; set; }
+    public string CustomerName { get; set; }
+}
+```
+Creating the Mapping Profile:
+```csharp
+using MapSharp;
+using System.Threading.Tasks;
+
+public class MappingProfile : Profile
+{
+    public void Configure()
+    {
+        CreateMap<Order, OrderDto>()
+            .ForMember(dest => dest.CustomerName, async src => await GetCustomerNameAsync(src.CustomerId));
+    }
+
+    private async Task<string> GetCustomerNameAsync(string customerId)
+    {
+        // Simulate asynchronous operation
+        await Task.Delay(100);
+        return $"Customer {customerId}";
+    }
+}
+```
+Generated Extension Method:
+```csharp
+public static class Order_To_OrderDto_MappingExtension
+{
+    public static async Task<OrderDto> ToOrderDtoAsync(this Order source)
+    {
+        if (source == null) throw an ArgumentNullException(nameof(source));
+
+        return new OrderDto
+        {
+            OrderId = source.OrderId,
+            Amount = source.Amount,
+            CustomerName = await GetCustomerNameAsync(source.CustomerId),
+        };
+    }
+
+    private static async Task<string> GetCustomerNameAsync(string customerId)
+    {
+        // Simulate asynchronous operation
+        await Task.Delay(100);
+        return $"Customer {customerId}";
+    }
+}
+```
+
 ## Diagnostics and Warnings
 MapSharp provides diagnostics to help identify issues in your mappings:
 
