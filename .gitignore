@@ -1,0 +1,89 @@
+# Ignore .NET build outputs
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.user
+*.rsuser
+
+# Rider IDE specific files
+.idea/
+.idea_modules/
+*.sln.iml
+*.sln.ide
+*.sln.idea
+.DS_Store
+
+# Auto-generated files by Rider
+*.csproj.user
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/modules.xml
+.idea/**/vcs.xml
+.idea/**/shelf/
+
+# Rider Local History
+.idea/**/shelf/
+
+# Exclude Rider’s idea directory but keep workspace.xml for project settings
+.idea/*
+!.idea/workspace.xml
+
+# Rider run configurations
+.idea/**/runConfigurations/
+
+# Mono auto generated files
+mono_crash.*
+
+# Ignore user secrets
+secrets.json
+
+# Ignore local NuGet files
+*.nupkg
+.nuget/
+
+# Ignore coverage tool output
+*.coverage
+*.coveragexml
+
+# Ignore publish directory
+publish/
+
+# Ignore database files
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Ignore EF migrations generated files
+Migrations/
+
+# Ignore configuration files
+*.config
+appsettings*.json
+
+# Ignore Rider logs and caches
+.idea/
+*.rider/
+*.idea/
+*.iml
+.idea_modules/
+
+# Ignore files from Resharper
+_ReSharper*/
+
+# Ignore local .NET caches
+.vscode/
+dotnet.exe
+.env
+.temp
+
+# Ignore build tools
+.npm
+node_modules/
+npm-debug.log

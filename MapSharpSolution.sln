@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{A6D13D37-68BD-4D23-8D89-1ECE6223A42B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapSharp", "Src\MapSharp\MapSharp.csproj", "{22FE5460-8A0F-424C-BFFF-AA8F0DE13CB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22FE5460-8A0F-424C-BFFF-AA8F0DE13CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22FE5460-8A0F-424C-BFFF-AA8F0DE13CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22FE5460-8A0F-424C-BFFF-AA8F0DE13CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22FE5460-8A0F-424C-BFFF-AA8F0DE13CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22FE5460-8A0F-424C-BFFF-AA8F0DE13CB0} = {A6D13D37-68BD-4D23-8D89-1ECE6223A42B}
+	EndGlobalSection
+EndGlobal

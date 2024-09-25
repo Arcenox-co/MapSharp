@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>MapSharp</RootNamespace>
+    <PackageId>MapSharp</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Albert Kunushevci</Authors>
+    <Company>Arcenox</Company>
+    <Description>
+      MapSharp is a powerful C# source generator library designed to automate the creation of type-safe mapping extension methods between your classes. Leveraging compile-time code generation, MapSharp eliminates the need for manual mapping configurations, enhancing both developer productivity and application performance.
+    </Description>
+    <PackageTags>
+      mapping;source generator;automapper;object mapping;code generation;compile-time;C#
+    </PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/arcenox/MapSharp</RepositoryUrl>
+    <Copyright>Copyright Arcenox LLC</Copyright>
+    <PackageProjectUrl>https://mapsharp.arcenox.com/</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Roslyn dependencies required for source generators -->
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.3.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include the same assembly as a Library in lib/netstandard2.0/ -->
+    <None Include="$(OutputPath)$(AssemblyName).dll">
+      <Pack>true</Pack>
+      <PackagePath>analyzers/roslyn$(ROSLYN_VERSION)/dotnet/cs</PackagePath>
+      <Visible>false</Visible>
+    </None>
+    <None Include="$(OutputPath)$(AssemblyName).dll">
+      <Pack>true</Pack>
+      <PackagePath>lib\netstandard2.0</PackagePath>
+      <Visible>true</Visible>
+    </None>
+  </ItemGroup>
+
+</Project>
